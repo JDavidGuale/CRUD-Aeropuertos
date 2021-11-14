@@ -1,0 +1,139 @@
+.contenedor{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(92, 92, 92, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /* opacity: .5; */
+    /* z-index: 1000;
+    top: 0; 20px*/  
+    left: 0;
+    top: 0;
+    /* bottom: 0; */
+}
+.water{
+    width:100px;
+    height: 100px;
+    background-color: rgba(110, 199, 235,1);
+    border-radius: 50%;
+    position: fixed;
+    box-shadow: inset 0 0 30px 0 rgba(0,0,0,.5), 0 4px 10px 0 rgba(0,0,0,.5);
+    overflow: hidden;
+
+}
+.icwater{
+    width:100px;
+    height: 100px;
+    background-color: #89CEE9;
+    border-radius: 50%;
+    position: fixed;
+    box-shadow: inset 0 0 30px 0 rgba(0,0,0,.5), 0 4px 10px 0 rgba(0,0,0,.5);
+    overflow: hidden;
+    /* animation: filling2 1s ease-in-out infinite; */
+
+}
+@keyframes filling {
+    50% {background-position: center 200px;}
+    100% {background-position: center 300px;}
+  }
+
+
+.cup {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 180px;
+    border-top: 2px solid transparent;
+    border-radius: 15px;
+    background: url(https://image.ibb.co/fmHm66/wave.png) ;
+    background-position: 0px 350px;
+    background-repeat: repeat-x;
+    /* animation: filling 4s ease-in-out infinite; */
+  }
+  
+  .cup:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    right: -57px;
+    top: 30px;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+
+  }
+  
+  @keyframes filling2 {
+    0%{
+        
+      filter: grayscale(100%);
+    }
+    100% {
+      filter: grayscale(0%);
+    }
+}
+  @keyframes filling {
+      0%{
+        filter: grayscale(100%);
+      }
+    50% {background-position: 3000px 0px;
+        filter: grayscale(50%);
+
+    }
+    100% {background-position: 6000px 350px;
+        filter: grayscale(0%);
+    }
+  }
+
+  .icwater:before, .icwater:after{
+    content:'';
+    position: absolute;
+    width:100px;
+    height: 100px;
+    top:-1px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.icwater:before{
+    border-radius: 50%;
+    /* background:rgba(255, 255, 255, 0.7) transparent; */
+    animation:wave 1.5s linear infinite;
+}
+.icwater:after{
+    border-radius: 35%;
+    /* background:rgba(255, 255, 255, 0.1) transparent; */
+    animation:wave 1.5s linear infinite;
+
+}
+
+
+.water:before, .water:after{
+    content:'';
+    position: absolute;
+    width:100px;
+    height: 100px;
+    top:-40px;
+    background-color: #fff;
+}
+.water:before{
+    border-radius: 50%;
+    background:rgba(255,255,255,.7);
+    animation:wave 5s linear infinite;
+}
+.water:after{
+    border-radius: 35%;
+    background:rgba(255,255,255,.3);
+    animation:wave 5s linear infinite;
+}
+@keyframes wave{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        top:-100px;
+        transform: rotate(360deg);
+    }
+}
