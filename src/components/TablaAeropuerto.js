@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from '../global.module.css';
 import { BiSkipPrevious,BiSkipNext } from "react-icons/bi";
 
-export const TablaAeropuerto = ({ dataComplete,setModalVisible,setSelectRow,setModoEdicion,setEliminar}) => {
+export const TablaAeropuerto = ({ dataComplete,setModalVisible,setSelectRow,setModoEdicion}) => {
     
   const header=['Codigo','Aeropuerto','Ciudad','Estado','Pais','Latitud','Longitud','opciones'];
 
@@ -17,10 +17,10 @@ export const TablaAeropuerto = ({ dataComplete,setModalVisible,setSelectRow,setM
   }
 
   const [currentPage, setCurrentPage] = useState(0);
-  const num_filas=30;
+  const num_filas=10;
   const num_paginas=Math.round(dataComplete.length /num_filas);
   
-  // const [num_paginas, setNum_paginas] = useState(num_paginas1);
+  // const [num_paginas, setNumPaginas] = useState(Math.round(dataComplete.length /num_filas));
   const [search, setSearch] = useState('');
   const [paginaActual, setPaginaActual] = useState(1);
   
@@ -29,6 +29,7 @@ export const TablaAeropuerto = ({ dataComplete,setModalVisible,setSelectRow,setM
       return dataComplete.slice(currentPage, currentPage+num_filas);
     }
     const filtered = dataComplete.filter(fila => 
+                                                  // fila.iata.toLowerCase().includes(search) ||
                                                   fila.airport.toLowerCase().includes(search) ||
                                                   fila.city.toLowerCase().includes(search) ||
                                                   fila.country.toLowerCase().includes(search) ||
@@ -41,6 +42,7 @@ export const TablaAeropuerto = ({ dataComplete,setModalVisible,setSelectRow,setM
 
   const nextPage = () => {
     if (dataComplete.filter(fila =>  
+    // fila.iata.toLowerCase().includes(search) ||
     fila.airport.toLowerCase().includes(search) ||
     fila.city.toLowerCase().includes(search) ||
     fila.country.toLowerCase().includes(search) ||
@@ -50,7 +52,6 @@ export const TablaAeropuerto = ({ dataComplete,setModalVisible,setSelectRow,setM
     ).length > currentPage + num_filas) {
       setCurrentPage(currentPage + num_filas);
       setPaginaActual(paginaActual+1);
-
     }
   }
 
@@ -69,7 +70,6 @@ export const TablaAeropuerto = ({ dataComplete,setModalVisible,setSelectRow,setM
     setCurrentPage(0);
     // setNum_paginas(Math.round(filtrarAeropuertos().length/num_filas));
     setPaginaActual(1);
-
     setSearch(target.value.toLowerCase());
   }
 

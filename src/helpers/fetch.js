@@ -1,5 +1,5 @@
 // const baseUrl = process.env.REACT_APP_API_URL;
-const baseUrl="https://ba42-186-66-204-72.ngrok.io/api/aeropuerto";
+const baseUrl="https://8a91-186-66-204-72.ngrok.io/api/aeropuerto";
 
 const fetchSinToken = (endpoint, data, method = "GET") => {
   const url = `${baseUrl}/${endpoint}`;

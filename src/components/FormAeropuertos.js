@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React from 'react'
 
 import { fetchSinToken } from '../helpers/fetch';
 import {useForm} from '../hooks/useForm'
@@ -8,12 +8,11 @@ import stylesModal from "../components/modal/modal.module.css";
 export const FormAeropuertos = ({selectRow,setPreloader,modoEdicion,setModoEdicion, setModalVisible,dataComplete,setRecargarTabla,setToastVisible,setMensajeToast,eliminar,setEliminar}) => {
 
 
-    const btn_eliminar = useRef(null);
-
     var datosForm = dataComplete.filter(item => item._id === (selectRow) );
     var data_inicial ={}
     if(modoEdicion){
             data_inicial ={
+                iata:datosForm[0].iata,
                 _id: datosForm[0]._id,
                 airport: datosForm[0].airport,
                 city: datosForm[0].city,
@@ -170,8 +169,8 @@ export const FormAeropuertos = ({selectRow,setPreloader,modoEdicion,setModoEdici
             }
             <form onSubmit={handleMantenimiento} noValidate={true}>
                 <div className={stylesModal.contenedor_inputs}>
-                    <div className={stylesModal.contenedor_input_fila}> 
-                        {/* <div className={stylesModal.contenedor_input}>
+                    <div className={stylesModal.contenedor_input_fila}>
+                        <div className={stylesModal.contenedor_input}>
                             <input 
                                 className={stylesModal.input}
                                 type="text" 
@@ -180,14 +179,17 @@ export const FormAeropuertos = ({selectRow,setPreloader,modoEdicion,setModoEdici
                                 name="iata"
                                 value={iata} 
                                 onChange={handleAeropuertoInputChange}
-                                disabled
                             />
                             <label className={stylesModal.input_label}>
                                 <span className={stylesModal.input_span}>
                                     Código:
                                 </span>
                             </label>
-                        </div> */}
+                        </div>
+                        
+
+                    </div>
+                    <div className={stylesModal.contenedor_input_fila}> 
                         <div className={stylesModal.contenedor_input}>
                             <input 
                                 className={stylesModal.input}

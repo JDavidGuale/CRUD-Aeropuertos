@@ -4,28 +4,7 @@
   --third-bg-color: #6CF2FF;
   }
   
-/* body{
-  background-image: url("./images/wave.svg");
-  background-size: cover;
-  /* background-size: 25rem; 
-  background-repeat: no-repeat;
-  /* margin: 0 auto; 
-  height: 100%;
-  width: auto;
-  /* background-position: center center; 
-  /* background-attachment: fixed; 
-  /* overflow: auto; 
-} */
-
 .btn_principal {
-  /* background-image: linear-gradient(
-    to right bottom,
-    #2d902d,
-    #2c9230,
-    #2c9332,
-    #2b9535,
-    #2a9737
-  ); */
   background: var(--second-bg-color) ;
   border: none;
   color: white;
@@ -35,14 +14,6 @@
 }
 
 .btn_principal:hover {
-  /* background-image: linear-gradient(
-    to right bottom,
-    #336a33,
-    #346d36,
-    #36703a,
-    #37733d,
-    #397641
-  ); */
   background: var(--second-bg-color) ;
   border: var(--second-bg-color) solid 1px;
   opacity: 0.85;
@@ -100,14 +71,6 @@ table tr {
   color: black;
   
 }
-
-
-/* table tr:hover td{
-  background-color: var(--main-bg-color);
-  opacity: .7;
-  color: white;
-  cursor: pointer;
-} */
 
 .lectura tr:hover td{
   background-color: rgba(212, 212, 212, .1);

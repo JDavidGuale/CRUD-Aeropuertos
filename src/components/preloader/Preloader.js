@@ -18,10 +18,22 @@ export const Preloader = ({preloader}) => {
         <>
         {
             preloader && 
+            // <div className={styles.contenedor}>
+            //     <div className={styles.icwater}>
+            //         <div className={styles.icwater2}></div>
+            //     </div>
+            // </div>
             <div className={styles.contenedor}>
-                <div className={styles.icwater}>
-                    <div className={styles.icwater2}></div>
-                </div>
+            <div className={styles.wrapper}>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.shadow}></div>
+                <div className={styles.shadow}></div>
+                <div className={styles.shadow}></div>
+                <span>Loading</span>
+            </div>
+
             </div>
         }
         </>
